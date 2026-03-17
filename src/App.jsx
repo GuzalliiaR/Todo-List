@@ -1,9 +1,7 @@
-const App = () => {
-  return (
-    <div>
-      <h1>To do List</h1>
-    </div>
-  )
-}
+import Todo from "./components/Todo";
 
-export default App
+const App = () => {
+  return <Todo />
+};
+
+export default App;
