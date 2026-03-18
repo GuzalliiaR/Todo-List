@@ -3,7 +3,9 @@ import Button from "./Button";
 
 const AddTaskForm = (props) => {
     const {
-        addTask
+        addTask,
+        newTaskTitle,
+        setNewTaskTitle
     } = props;
 
     const onSubmit = (e) => {
@@ -17,6 +19,8 @@ const AddTaskForm = (props) => {
                 className="todo__field"
                 id="new-task"
                 label="New task title"
+                value={newTaskTitle}
+                onChange={(e) => setNewTaskTitle(e.target.value)}
             />
             <Button type='submit'> Add </ Button>
         </form>
