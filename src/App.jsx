@@ -1,6 +1,6 @@
 import Todo from "./components/Todo";
 
-const App = () => {
+const App = () => {  
   return <Todo />
 };
 
