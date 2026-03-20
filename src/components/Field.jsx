@@ -5,7 +5,8 @@ const Field = (props) => {
         label,
         type = 'text',
         value,
-        onChange
+        onChange,
+        ref
     } = props;
 
     return (
@@ -24,6 +25,7 @@ const Field = (props) => {
                 type={type}
                 value={value}
                 onChange={onChange}
+                ref={ref}
             />
         </div>
     )
