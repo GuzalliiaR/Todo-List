@@ -7,7 +7,17 @@ const headers = {
 const tasksAPI = {
     getAll: () => { 
         return fetch(URL)
-            .then((response) => response.json())  // Преобразуем ответ от сервера в нужный формат json
+            .then((response) => response.json())  // Сообщаем серверу, что данные необходимо вернуть в .json
+    },
+
+    getById: (taskId) => {
+        return fetch(`${URL}/${taskId}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                };
+                return response.json();
+            })
     },
 
     add: (newTask) => {
