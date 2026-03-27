@@ -1,8 +1,10 @@
 import { memo, useContext } from "react";
-import TodoItem from "./TodoItem";
-import { TasksContext } from "../context/TasksContext";
+import TodoItem from "../TodoItem/TodoItem";
+import { TasksContext } from "../../context/TasksContext";
 
-const TodoList = () => {
+const TodoList = (props) => {
+    const { styles } = props;
+
     const {
         tasks,
         filteredTasks
@@ -12,18 +14,18 @@ const TodoList = () => {
     const isEmptyFilteredTasks = filteredTasks ? filteredTasks.length === 0 : false;
 
     if (!hasTasks) {
-        return <div className="todo__empty-message">Задач пока нет</div>
+        return <div className={styles.emptyMessage}>Задач пока нет</div>
     };
 
     if (hasTasks && isEmptyFilteredTasks) {
-        return <div className="todo__empty-message">Задачи не найдены</div>
+        return <div className={styles.emptyMessage}>Задачи не найдены</div>
     };
 
     return (
-        <ul className="todo__list">
+        <ul className={styles.list}>
             {(filteredTasks || tasks).map((task) => (
                 <TodoItem
-                    className="todo__item"
+                    className={styles.item}
                     key={task.id}
                     {...task}
                 />
