@@ -7,14 +7,9 @@
   border-radius: var(--border-radius);
   opacity: 1;
   transform: translateY(0);
-  max-height: 100px;
   transition: 
     opacity calc(var(--transition-duration) * 2) ease-out,
-    transform calc(var(--transition-duration) * 2) ease-out,
-    max-height calc(var(--transition-duration) * 2) ease-out,
-    padding calc(var(--transition-duration) * 2) ease-out,
-    border-width calc(var(--transition-duration) * 2) ease-out;
-  overflow: hidden;
+    transform calc(var(--transition-duration) * 2) ease-out;
 
   &:hover {
     background-color: var(--color-gray-1);
@@ -29,12 +24,15 @@
   &.isDisappearing {
     opacity: 0;
     transform: translateY(-75%);
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-width: 0;  
     transition-duration: calc(var(--transition-duration) * 2);
     pointer-events: none;
+/* 
+    & ~ .todoItem {
+      transform: translateY(calc((100% + var(--todoListRowGap)) * -1));
+      transition-delay: var(--transition-duration);
+      transition-duration: var(--transition-duration);
+      pointer-events: none;
+    } */
   }
 }
 
