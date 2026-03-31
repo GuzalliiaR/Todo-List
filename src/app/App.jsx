@@ -1,6 +1,7 @@
-import Router from "./Router";
-import TaskPage from "./pages/TaskPage";
-import TasksPage from "./pages/TasksPage";
+import Router from "./routing";
+import TaskPage from "../pages/TaskPage";
+import TasksPage from "../pages/TasksPage";
+import "./styles"
 
 const App = () => {  
   const routes = {
