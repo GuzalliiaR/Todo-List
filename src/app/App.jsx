@@ -1,4 +1,4 @@
-import Router from "./routing";
+import Router from "./routing/Router";
 import TaskPage from "../pages/TaskPage";
 import TasksPage from "../pages/TasksPage";
 import "./styles"
