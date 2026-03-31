@@ -1,6 +1,6 @@
-import { Children, memo, useContext } from "react";
-import { TasksContext } from "../../context/TasksContext";
-import RouterLink from "../RouterLink/RouterLink";
+import { memo, useContext } from "react";
+import { TasksContext } from "../../model/TasksContext";
+import RouterLink from "../../../../components/RouterLink/RouterLink";
 import styles from './TodoItem.module.css'
 
 const TodoItem = (props) => {

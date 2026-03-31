@@ -1,7 +1,7 @@
 import Field from "../../components/Field/Field";
 import Button from "../../components/Button/Button";
 import { useContext, useState } from "react";
-import { TasksContext } from "../../context/TasksContext";
+import { TasksContext } from "../../entities/todo";
 
 const AddTaskForm = (props) => {
     const { styles } = props;
