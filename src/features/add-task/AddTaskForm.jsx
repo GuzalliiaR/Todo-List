@@ -1,5 +1,5 @@
-import Field from "../../components/Field/Field";
-import Button from "../../components/Button/Button";
+import Field from "../../shared/ui/Field";
+import Button from "../../shared/ui/Button";
 import { useContext, useState } from "react";
 import { TasksContext } from "../../entities/todo";
 

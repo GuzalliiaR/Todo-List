@@ -3,7 +3,7 @@ import AddTaskForm from "../../features/add-task";
 import SearchTaskForm from "../../features/search-task";
 import TodoInfo from "../../features/stats";
 import { TodoList } from "../../entities/todo";
-import Button from "../../components/Button/Button";
+import Button from "../../shared/ui/Button";
 import { TasksContext } from "../../entities/todo";
 import styles from './Todo.module.css'
 
