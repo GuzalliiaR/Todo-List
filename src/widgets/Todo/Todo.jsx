@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import AddTaskForm from "../../components/AddTaskForm/AddTaskForm";
-import SearchTaskForm from "../../components/SearchTaskForm/SearchTaskForm";
-import TodoInfo from "../../components/TodoInfo/TodoInfo";
+import AddTaskForm from "../../features/add-task";
+import SearchTaskForm from "../../features/search-task";
+import TodoInfo from "../../features/stats";
 import TodoList from "../../components/TodoList/TodoList";
 import Button from "../../components/Button/Button";
 import { TasksContext } from "../../context/TasksContext";

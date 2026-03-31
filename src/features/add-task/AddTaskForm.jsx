@@ -1,5 +1,5 @@
-import Field from "../Field/Field";
-import Button from "../Button/Button";
+import Field from "../../components/Field/Field";
+import Button from "../../components/Button/Button";
 import { useContext, useState } from "react";
 import { TasksContext } from "../../context/TasksContext";
 
