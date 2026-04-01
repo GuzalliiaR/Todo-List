@@ -5,7 +5,7 @@ import {
     useCallback,
     useMemo,
 } from "react";
-import tasksAPI from "../../../shared/api/tasks/index";
+import tasksAPI from "@/shared/api/tasks";
 
 const useTasks = () => {
 

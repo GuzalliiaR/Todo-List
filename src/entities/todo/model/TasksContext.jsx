@@ -1,6 +1,4 @@
-import {
-    createContext
-} from "react";
+import { createContext } from "react";
 import useTasks from "./useTasks";
 import useIncompleteTasksScroll from "./useIncompleteTasksScroll";
 
