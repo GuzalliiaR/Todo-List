@@ -1,7 +1,8 @@
 import { memo, useContext } from "react";
 import { TasksContext } from "@/entities/todo";
 import RouterLink from "@/shared/ui/RouterLink";
-import styles from './TodoItem.module.css'
+import { highlightCaseInsensitive } from "@/shared/utils/highlight";
+import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
     const {
@@ -17,9 +18,13 @@ const TodoItem = (props) => {
         deleteTasks,
         toggleTaskComplete,
         disappearingTaskId,
-        appearingTaskId
+        appearingTaskId,
+        searchQuery
     } = useContext(TasksContext);
 
+    // Ищем в title совпадения с searchQuery, найденные совпадения регистронезависимые и выледяются тегом <makr>
+    const highlightedTitle = highlightCaseInsensitive(title, searchQuery);
+    
     return (
         <li
             className={`
@@ -44,7 +49,7 @@ const TodoItem = (props) => {
                 { title }
             </label>
             <RouterLink to={`/tasks/${id}`} aria-label="Task detail page" >
-                {title}
+                <span dangerouslySetInnerHTML={{ __html: highlightedTitle }} />
             </RouterLink> 
             <button
                 className={styles.deleteButton}
