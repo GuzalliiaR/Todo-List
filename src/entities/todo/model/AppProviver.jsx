@@ -1,8 +1,7 @@
 import { useMemo } from "react";
-import { TasksContext, SearchContext } from "@/entities/todo";
+import { TasksContext, SearchContext, UIStateContext } from "@/entities/todo";
 import useTasks from "./useTasks";
 import useIncompleteTasksScroll from "./useIncompleteTasksScroll";
-import { UIStateContext } from "./UIStateContext";
 
 export const AppProvider = ({ children }) => {
     const {
