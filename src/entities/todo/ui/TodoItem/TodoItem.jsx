@@ -1,7 +1,8 @@
 import { memo, useContext } from "react";
-import { TasksContext } from "@/entities/todo";
+import { TasksContext, SearchContext, UIStateContext } from "@/entities/todo";
 import RouterLink from "@/shared/ui/RouterLink";
 import { highlightCaseInsensitive } from "@/shared/utils/highlight";
+
 import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
@@ -13,14 +14,20 @@ const TodoItem = (props) => {
     } = props;
 
     const {
-        firstIncompleteTaskRef,
-        firstIncompleteTaskId,
         deleteTasks,
         toggleTaskComplete,
+    } = useContext(TasksContext);
+
+    const {
         disappearingTaskId,
         appearingTaskId,
+        firstIncompleteTaskRef,
+        firstIncompleteTaskId
+    } = useContext(UIStateContext);
+
+    const {
         searchQuery
-    } = useContext(TasksContext);
+    } = useContext(SearchContext);
 
     // Ищем в title совпадения с searchQuery, найденные совпадения регистронезависимые и выледяются тегом <makr>
     const highlightedTitle = highlightCaseInsensitive(title, searchQuery);

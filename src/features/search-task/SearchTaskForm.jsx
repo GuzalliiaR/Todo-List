@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Field from "@/shared/ui/Field";
-import { TasksContext } from "@/entities/todo";
+import { SearchContext } from "@/entities/todo";
 
 const SearchTaskForm = (props) => {
     const { styles } = props;
@@ -8,7 +8,7 @@ const SearchTaskForm = (props) => {
     const {
         searchQuery,
         setSearchQuery
-    } = useContext(TasksContext);
+    } = useContext(SearchContext);
 
     return (
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>

@@ -1,13 +1,12 @@
 import { memo, useContext } from "react";
-import { TodoItem, TasksContext }  from "@/entities/todo";
+import { TodoItem, TasksContext, SearchContext }  from "@/entities/todo";
 
 const TodoList = (props) => {
     const { styles } = props;
 
-    const {
-        tasks,
-        filteredTasks
-    } = useContext(TasksContext);
+    const { tasks } = useContext(TasksContext);
+
+    const { filteredTasks } = useContext(SearchContext);
 
     const hasTasks = tasks.length > 0;
     const isEmptyFilteredTasks = filteredTasks ? filteredTasks.length === 0 : false;

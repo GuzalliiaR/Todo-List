@@ -1,17 +1,16 @@
 import { useContext, useState } from "react";
+import { TasksContext, UIStateContext } from "@/entities/todo";
 import Field from "@/shared/ui/Field";
 import Button from "@/shared/ui/Button";
-import { TasksContext } from "@/entities/todo";
 
 const AddTaskForm = (props) => {
     const { styles } = props;
 
     const [newTaskTitle, setNewTaskTitle] = useState('');
 
-    const {
-        addTask,
-        newTaskInputRef
-    } = useContext(TasksContext);
+    const { addTask } = useContext(TasksContext);
+
+    const { newTaskInputRef } = useContext(UIStateContext)
 
     const [error, setError] = useState('');
 

@@ -1,3 +1,6 @@
-export { TasksContext, TasksProvider } from './model/TasksContext'
+export { AppProvider } from './model/AppProviver'
+export { TasksContext } from './model/TasksContext'
+export { SearchContext } from './model/SearchContext'
+export { UIStateContext } from './model/UIStateContext'
 export { default as TodoItem } from './ui/TodoItem'
 export { default as TodoList } from './ui/TodoList'

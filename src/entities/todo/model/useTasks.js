@@ -116,12 +116,12 @@ const useTasks = () => {
 
     return {
         tasks,
-        filteredTasks,
         deleteTasks,
         deleteAllTasks,
         toggleTaskComplete,
         searchQuery,
         setSearchQuery,
+        filteredTasks,
         newTaskInputRef,
         addTask,
         disappearingTaskId,
