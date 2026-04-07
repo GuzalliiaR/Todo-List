@@ -1,5 +1,6 @@
-// Компонент RouterLink обеспечивает роутинг без перезагрузки страницы приложения
+import { BASE_URL } from '@/shared/constants'; 
 
+// Компонент RouterLink обеспечивает роутинг без перезагрузки страницы приложения
 const RouterLink = (props) => {
     const {
         to,
@@ -20,7 +21,7 @@ const RouterLink = (props) => {
     };
 
     return (
-        <a href={to} onClick={handleClick} {...rest}>
+        <a href={`${BASE_URL}${to}`} onClick={handleClick} {...rest}>
             {children}
         </a>
     );

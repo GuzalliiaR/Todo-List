@@ -1,4 +1,14 @@
 import { useState, useEffect } from "react";
+import { BASE_URL } from '@/shared/constants'; 
+
+const getCurrentPath = () => {
+    // window.location.pathname возвращает путь и имя файла текущей веб-страницы (строка после домена)
+    const pathname = window.location.pathname;
+
+    return pathname.startsWith(BASE_URL)
+        ? pathname.slice(BASE_URL.length - 1) || '/'
+        : pathname;
+}
 
 // проверка соотвтетсвия path одному из шаблонов rout в объекте routes (из App.jsx)
 const matchPath = (path, rout) => {
@@ -25,12 +35,11 @@ const matchPath = (path, rout) => {
 
 export const useRoute = () => {
     // path - текущий путь
-    const [path, setPath] = useState(window.location.pathname);
+    const [path, setPath] = useState(getCurrentPath());
 
     useEffect(() => {
         const onLocationChange = () => {
-            // window.location.pathname возвращает путь и имя файла текущей веб-страницы (строка после домена)
-            setPath(window.location.pathname);
+            setPath(getCurrentPath());
         };
         // Событие popstate вызывается, когда изменяется активная запись истории
         // Chrome и Safari всегда вызывают popstate по окончании загрузки страницы

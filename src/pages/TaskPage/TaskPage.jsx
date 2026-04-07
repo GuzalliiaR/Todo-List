@@ -26,7 +26,7 @@ const TaskPage = (props) => {
             });
     }, []);
 
-    console.log('isLoading: ', isLoading, 'hasError: ', hasError);
+    console.log('isLoading: ', isLoading, 'hasError: ', hasError, 'task: ', task);
 
     // Это условие сработает при первом рендере страницы
     if (isLoading) {
